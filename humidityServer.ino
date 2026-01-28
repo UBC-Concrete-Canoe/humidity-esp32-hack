@@ -9,17 +9,17 @@
 
 // --- UBCsecure CONFIGURATION ---
 const char* WIFI_SSID = "ubcsecure"; // Use lowercase as seen in your scan
-const char* EAP_USERNAME = "cwluser"; 
-const char* EAP_PASSWORD = "cwlpwd";
+const char* EAP_USERNAME = "cwluser"; // CHANGE THIS
+const char* EAP_PASSWORD = "cwlpwd"; // CHANGE THIS
 
-const char* SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyY5nwZ_yyBdIP1OV4Jo8v6AosNzE-olYpODDp_PWHGXoHtnQD8smuHqzGe2edAUUDprQ/exec";
+const char* SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyY5nwZ_yyBdIP1OV4Jo8v6AosNzE-olYpODDp_PWHGXoHtnQD8smuHqzGe2edAUUDprQ/exec"; // CHANGE THIS
 
 // Sleep Time (Seconds)
 #define TIME_TO_SLEEP  300 
 
-static BLEUUID serviceUUID("00010203-0405-0607-0809-0a0b0c0d1910");
-static BLEUUID charUUID("00010203-0405-0607-0809-0a0b0c0d2b10");
-const char* targetMACStr = "f2:52:e0:a2:b9:8b"; 
+static BLEUUID serviceUUID("00010203-0405-0607-0809-0a0b0c0d1910"); // CHANGE THIS
+static BLEUUID charUUID("00010203-0405-0607-0809-0a0b0c0d2b10"); // CHANGE THIS
+const char* targetMACStr = "f2:52:e0:a2:b9:8b";  // CHANGE THIS
 
 // --- GLOBALS ---
 RTC_DATA_ATTR int bootCount = 0;
@@ -34,9 +34,9 @@ BLEAdvertisedDevice* myDevice = nullptr;
 // --- CALLBACKS ---
 void notifyCallback(BLERemoteCharacteristic* pChar, uint8_t* pData, size_t length, bool isNotify) {
   if (length >= 6) {
-    int16_t rawTemp = pData[3] | (pData[4] << 8);
+    int16_t rawTemp = pData[3] | (pData[4] << 8); // CHANGE THIS (According to specific device specs)
     tempVal = rawTemp / 10.0;
-    humVal = pData[5];
+    humVal = pData[5]; // CHANGE THIS (According to specific device specs)
     dataReceived = true;
   }
 }
