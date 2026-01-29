@@ -20,6 +20,7 @@
 - Navigate to **Extensions → Apps Script**.
 - Paste in the provided Apps Script code.
 - Modify the script as needed for your spreadsheet layout.
+- Add a trigger (Time based) to make sure your heartbeat is running correctly
 
 ## 4. Deployment
 - Deploy the Apps Script as a **Web App** and copy the deployment URL.
